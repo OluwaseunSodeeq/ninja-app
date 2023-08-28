@@ -1,9 +1,14 @@
-// import logo from './logo.svg';
+// USE STATE "npx json-server --watch data/db.json --port 8000 to initialize a database"s
 import Navbar from "./Components/Navbar";
 import Home from "./Home";
 import Createe from "./Createe";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import { create } from "./create";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom/cjs/react-router-dom.min";
+import BlogDetails from "./BlogDetails";
+import NotFound from "./NotFound";
 
 function App() {
   return (
@@ -18,6 +23,12 @@ function App() {
             <Route path="/create">
               <Createe />
             </Route>
+            <Route path="/blogs/:id">
+              <BlogDetails />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
           </Switch>
         </div>
       </div>
@@ -26,18 +37,3 @@ function App() {
 }
 
 export default App;
-/*
-
-<header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>*/

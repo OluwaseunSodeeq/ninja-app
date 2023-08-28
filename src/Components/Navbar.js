@@ -1,4 +1,4 @@
-import { Link } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/create">New Blog</Link>
-        <Link to="/">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </div>
     </nav>
   );
